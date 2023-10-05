@@ -24,7 +24,7 @@
                     {{ csrf_field() }}
 
                     <label for="listItem">New Todo Item</label><br>
-                    <input type="text" name="listItem"><br>
+                    <input type="text" name="listItem" required><br>
                     <button type="submit">Save Item</button>
                 </form>
 
