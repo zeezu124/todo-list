@@ -13,7 +13,7 @@
 
     </head>
     <body class="antialiased">
-        <div id="todo-div">
+        <div id="todo-container">
             <h1>Todo List</h1> <br>
 
             <div class="form-container">
@@ -30,7 +30,7 @@
                 @foreach ($listItems as $listItem)
                 <div id="list-item">
                     <p>Item: {{ $listItem->name }}</p>
-                    <p>Date: {{ $listItem->created_at }}</p>
+                    <p>Date: {{ date('M d, Y, H:i A', strtotime($listItem->created_at)) }}</p>
                     <button type="submit" id="mark-complete-button">Mark Complete</button>
                 </div>
                 @endforeach
