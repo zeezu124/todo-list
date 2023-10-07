@@ -18,11 +18,16 @@
     <body class="antialiased">
         <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
             <div style="color: blue;">
-                <h1>Todo List</h1>
+                <h1>Todo List</h1><br>
+
+                @foreach ($listItems as $listItem)
+                    <p>Item: {{ $listItem->name }}</p>
+                    <button type="submit" style="max-height: 25px; margin-left:20px;">Mark Complete</button>
+                @endforeach
 
                 <form method="post" action="{{ route('saveItem') }}" accept-charset="UTF-8">
                     {{ csrf_field() }}
-
+                    <br>
                     <label for="listItem">New Todo Item</label><br>
                     <input type="text" name="listItem" required><br>
                     <button type="submit">Save Item</button>
