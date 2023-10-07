@@ -23,6 +23,8 @@ body {
 #list-item {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 10px 20px;
     margin: 10px;
     border: 1px solid #000000; /* Specify border width and color */
@@ -38,7 +40,7 @@ body {
 }
 
 /* Combine button styles for form buttons */
-#form-button, #mark-complete-button {
+#submit-button, #mark-complete-button {
     background-color: #4CAF50;
     color: #fff;
     border: none;
@@ -46,6 +48,10 @@ body {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+}
+
+#submit-button {
+    margin-top: 10px;
 }
 
 /* Override styles for the mark-complete-button */
