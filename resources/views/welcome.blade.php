@@ -17,22 +17,27 @@
             <h1>Todo List</h1> <br>
 
             <div class="form-container">
-                <form method="post" action="{{ route('saveItem') }}" accept-charset="UTF-8" id="todo-form">
+                <form method="POST" action="{{ route('saveItem') }}" accept-charset="UTF-8" id="todo-form">
                     {{ csrf_field() }}
-                    <label for="listItem">Insert task here:</label>
+                    <label for="listItem"><i><em>Insert task here:</em></i></label>
                     <input type="text" name="listItem" required>
-                    <button type="submit" id="form-button">Save Task</button>
+                    <button type="submit" id="submit-button">Save Task</button>
                 </form>
             </div>
 
             <h2>Added tasks</h2>
             <div class="list-container">
                 @foreach ($listItems as $listItem)
+                @if ($listItem->is_complete == 0)
                 <div id="list-item">
-                    <p>Item: {{ $listItem->name }}</p>
+                    <p><b>Item: {{ $listItem->name }}</b></p>
                     <p>Date: {{ date('M d, Y, H:i A', strtotime($listItem->created_at)) }}</p>
-                    <button type="submit" id="mark-complete-button">Mark Complete</button>
+                    <form method="POST" action="{{ route('markComplete', $listItem->id) }}">
+                        {{ csrf_field() }}
+                        <button type="submit" id="mark-complete-button">Mark Complete</button>
+                    </form>
                 </div>
+                @endif
                 @endforeach
             </div>
         </div>
