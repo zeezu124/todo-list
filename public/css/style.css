@@ -1,12 +1,53 @@
-button {
-    background-color: #4CAF50; /* Green background color */
+body {
+    font-family: "Arial", sans-serif; /* Change the font family */
+}
+
+#todo-div {
+    background-color: rgb(194, 153, 175);
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+}
+
+.list-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Define the number of columns */
+    grid-gap: 20px; /* Define the gap between grid items */
+}
+
+#list-item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    margin: 10px;
+    border: #000000;
+    border-style: solid;
+}
+
+#todo-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style buttons */
+#form-button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+}
+
+#mark-complete-button {
+    background-color: #b12f2f; /* Green background color */
     color: white; /* Text color */
     padding: 10px 20px; /* Padding around the text */
     border: none; /* Remove default button border */
     cursor: pointer; /* Add a pointer cursor on hover */
     border-radius: 5px; /* Rounded corners */
   }
-
-.todo-div {
-    background-color: blueviolet;
-}
