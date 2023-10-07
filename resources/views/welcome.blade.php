@@ -13,23 +13,27 @@
 
     </head>
     <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            <div class="todo-div">
-                <h1>Todo List</h1><br>
+        <div id="todo-div">
+            <h1>Todo List</h1> <br>
 
-                @foreach ($listItems as $listItem)
-                    <p>Item: {{ $listItem->name }}</p>
-                    <button type="submit">Mark Complete</button>
-                @endforeach
-
-                <form method="post" action="{{ route('saveItem') }}" accept-charset="UTF-8">
+            <div class="form-container">
+                <form method="post" action="{{ route('saveItem') }}" accept-charset="UTF-8" id="todo-form">
                     {{ csrf_field() }}
-                    <br>
-                    <label for="listItem">New Todo Item</label><br>
-                    <input type="text" name="listItem" required><br>
-                    <button type="submit">Save Item</button>
+                    <label for="listItem">Insert task here:</label>
+                    <input type="text" name="listItem" required>
+                    <button type="submit" id="form-button">Save Task</button>
                 </form>
+            </div>
 
+            <h2>Added tasks</h2>
+            <div class="list-container">
+                @foreach ($listItems as $listItem)
+                <div id="list-item">
+                    <p>Item: {{ $listItem->name }}</p>
+                    <p>Date: {{ $listItem->created_at }}</p>
+                    <button type="submit" id="mark-complete-button">Mark Complete</button>
+                </div>
+                @endforeach
             </div>
         </div>
     </body>
