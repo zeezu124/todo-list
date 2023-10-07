@@ -1,30 +1,35 @@
+/* Use a single font-family declaration for the entire body */
 body {
-    font-family: "Arial", sans-serif; /* Change the font family */
+    font-family: "Arial", sans-serif;
 }
 
-#todo-div {
+/* Simplify styles for the todo-div */
+#todo-container {
     background-color: rgb(194, 153, 175);
-    display: flex; /* Use flexbox */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Simplify styles for the list-container */
 .list-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Define the number of columns */
-    grid-gap: 20px; /* Define the gap between grid items */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; /* Use 'gap' property for grid gap */
 }
 
+/* Simplify styles for list items */
 #list-item {
     display: flex;
     flex-direction: column;
     padding: 10px 20px;
     margin: 10px;
-    border: #000000;
-    border-style: solid;
+    border: 1px solid #000000; /* Specify border width and color */
+    border-radius: 5px; /* Rounded corners */
 }
 
+/* Simplify styles for the todo-form */
 #todo-form {
     display: flex;
     flex-direction: column;
@@ -32,22 +37,18 @@ body {
     align-items: center;
 }
 
-/* Style buttons */
-#form-button {
+/* Combine button styles for form buttons */
+#form-button, #mark-complete-button {
     background-color: #4CAF50;
     color: #fff;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 5px;
 }
 
+/* Override styles for the mark-complete-button */
 #mark-complete-button {
-    background-color: #b12f2f; /* Green background color */
-    color: white; /* Text color */
-    padding: 10px 20px; /* Padding around the text */
-    border: none; /* Remove default button border */
-    cursor: pointer; /* Add a pointer cursor on hover */
-    border-radius: 5px; /* Rounded corners */
-  }
+    background-color: #b12f2f;
+}
